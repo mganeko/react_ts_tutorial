@@ -114,13 +114,6 @@ class Game extends React.Component<GamePropsInterface, GameStateInterface> {
     const current = history[this.state.stepNumber];
     const winner = calculateWinner(current.squares);
 
-    let status;
-    if (winner) {
-      status = 'Winner: ' + winner;
-    } else {
-      status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
-    }
-
     const moves = history.map((step, move) => {
       const desc = move ?
         'Go to move #' + move :
@@ -132,6 +125,21 @@ class Game extends React.Component<GamePropsInterface, GameStateInterface> {
       );
     });
 
+    // --- check winner --
+    let status;
+    if (winner) {
+      status = 'Winner: ' + winner;
+    } else {
+      status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+    }
+
+    // -- check draw --
+    if (this.state.stepNumber >= 3 * 3) {
+      // draw
+      status = 'Draw';
+    }
+
+    // --- render DOM ---
     return (
       <div className="game">
         <div className="game-board">
