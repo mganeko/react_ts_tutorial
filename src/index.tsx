@@ -1,3 +1,11 @@
+//
+// React.js Tutorial with Typescript
+//
+// based:
+//   - https://ja.reactjs.org/tutorial/tutorial.html
+//   - https://note.com/tkugimot/n/nf7fe751298b1
+
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
