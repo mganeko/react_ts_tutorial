@@ -1,5 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 # refer: https://qiita.com/nouka/items/aae1e68dfe81e4441c4f
+#  deploy ok, but not visible?
 
 name: Release GitHub Page
 
